@@ -1,0 +1,41 @@
+import java.awt.Color;
+Color Red;
+Color Yellow;
+Color Green;
+
+public void situation() {
+		sit = (sit + 1) % 3;
+		if (sit == 0) {
+			c.setTurn(Color.green);
+		}
+		else if (sit == 1) {
+			c.setTurn(Color.yellow);
+		}
+		else if (sit == 2) {
+			c.setTurn(Color.red);
+		}
+	}
+
+public void turn() {
+   if ( Light == Color.red ){
+       Red = turnOn( Color.red );
+       Yellow = turnOff( Color.yellow );
+       Green = turnOff( Color.green );
+   }
+   else if ( Light == Color.yellow ){
+       Red = turnOff( Color.red );
+       Yellow = turnOn( Color.yellow );
+       Green = turnOff( Color.green );
+   }
+   else if ( Light == Color.green )
+       Red = turnOff( Color.red );
+       Yellow = turnOff( Color.yellow );
+       Green = turnOn( Color.green );
+   }
+  
+  Color turnOn( Color col )
+  { return col.brighter().brighter(); }
+ 
+  Color turnOff( Color col )
+  { return col.darker().darker(); }
+}
